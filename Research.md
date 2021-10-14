@@ -33,17 +33,17 @@
     
     | ![image](/Images/reflected-xss.png)|
     |:--:|
-    | *(fig .1)*|
+    | *(fig 1.)*|
 
     Example:  
-    Lets say there is a website which shows the unfiltered URL query on the page.  
+    Let's say there is a website which shows the unfiltered URL query on the page.  
     ```
     URL: http://www.example.com/input?q=test  
     HTML: <p>Your input was test </p>  
     Output: Your input was test
     ```    
 
-    Now lets inject a malicious script into this URL.  
+    Now let's inject a malicious script into this URL.  
     ```
     URL: http://www.example.com/input?q=test+%3Cscript%3EMalicious_Script()%3C/script%3E  
     HTML: <p>Your input was test<script>Malicious_Script()</script></p>  
@@ -53,13 +53,42 @@
     But the user will not notice any visible difference on the website.
 
     ### **Stored XSS <a id="StoredXSS"></a>**  
-    Stored XSS (a.k.a. Persistent XSS or Second-Order XSS) is a type of attack where the script is stored in the application's database. 
+    Stored XSS (a.k.a. Persistent XSS or Second-Order XSS) is a type of attack where the script is stored in the application's database.   
+    The malicious script can be submitted to the application via HTTP requests, for example: comments, usernames, user descriptions, etc.  
+    The user doesn't even need to click the wrong link for the malicious script to get to them, as the script is requested by them expecting  
+    it to be normal data.
 
-    ### **DOM-Based XSS <a id="DOMBasedXSS"></a>**
+    | ![image](/Images/Stored-xss.png)|
+    |:--:|
+    | *(fig 2.)*|  
+
+    Example:
+    Let's say we have a website where you can create blog posts. And the blog post in open a stored XSS vulnerablilty.
+    ```
+    Input: This is a new blogpost
+    Database: This is a new blogpost
+    HTML: <p>This is a new blogpost</p>
+    Output: This is a new blogpost
+    ```  
+    Now let's inject a malicious script to the input
+    ```
+    Input: This is a new blogpost <script>Malicious_Script()</script>
+    Database: This is a new blogpost <script>Malicious_Script()</script>
+    HTML: <p>This is a new blogpost <script>Malicious_Script()</script></p>
+    Output: This is a new blogpost
+    ```    
+    Now again we see the same output from both input's but the second input has again a malicous script hidden in it's HTML.  
+    For the user there is no visible difference between both input's.
+
+    ### **DOM-Based XSS <a id="DOMBasedXSS"></a>**  
+    
+    | ![image](/Images/DOM-Based-XSS.png)|
+    |:--:|
+    | *(fig 3.)*| 
 
 - ## How To Carry Out A XSS Attack?
 
-- ## What Are Different Types Of XSS Vurnerabilities?
+- ## What Are Different Types Of XSS Vulnerabilities?
 
 - ## How To Prevent XSS Attacks?
 
@@ -76,5 +105,7 @@
 
     https://financialit.net/news/cybersecurity/cross-site-scripting-xss-makes-nearly-40-all-cyber-attacks-2019#:~:text=Cross%2DSite%20Scripting%20(XSS),All%20Cyber%20Attacks%20in%202019&text=10%3A31%20am-Cyber%2Dattacks%20have%20targeted%20nearly%2075%20percent%20of%20large%20companies,over%20the%20last%20twelve%20months.  
     
-    *(fig 1.)* https://blog.sqreen.com/reflected-xss/#:~:text=A%20reflected%20XSS%20  
-# Concurrency <a id="Concurrency"></a>
+    *(fig 1.)* https://miro.medium.com/max/1050/1\*o_asKsD_JqunhqggHoxodw.png  
+    *(fig 2.)* https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/sorted-XSS.png  
+    *(fig 3.)* https://miro.medium.com/max/1050/1\*yuRkBR6YroYLCGpka9KdRA.png    
+# Concurrency <a id="Concurrency"></a>   
