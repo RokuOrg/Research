@@ -1,18 +1,22 @@
 # **Research**
 
 # Table of Contents
-1. [Cross-Site Scripting](#XSS)
-    1. [What is Cross-Site Scripting (XSS)](#WhatIsXSS)
+1. [Introduction](#Introduction)
+2. [Cross-Site Scripting](#XSS)
+    1. [Introduction to XSS](#XSSIntroduction)
     2. [Different Types Of XSS Attacks](#XSSAttacks)
         1. [Reflected XSS](#ReflectedXSS)
         2. [Stored XSS](#StoredXSS)
         3. [DOM-Based XSS](#DOMBasedXSS)
-    3. [References](#References)
-2. [Concurrency](#Concurrency)
+    3. [References](#XSSReferences)
+3. [Object Storage Systems](#OSS)
+4. [Concurrency](#Concurrency)
 
-# Cross-Site Scripting (XSS) <a id="XSS"></a>
+# Introduction <a id="Introduction"></a>  
 
-- ## What is Cross-Site Scripting <a id="WhatIsXSS"> </a>
+# Cross-Site Scripting (XSS) <a id="XSS"></a>  
+
+- ## Introduction <a id="XSSIntroduction"> </a>  
     Cross-site scripting is a type of attack where the attacker injects malicious scripts into a website.  
     The attack is carried out by using a web application to send malicious scripts to a different user.  
     It XSS is one of the most common vulnerability  on the web taking up almost 40% of all cyberattacks in 2019.  
@@ -58,7 +62,7 @@
     The user doesn't even need to click the wrong link for the malicious script to get to them, as the script is requested by them expecting  
     it to be normal data.
 
-    | ![image](/Images/Stored-xss.png)|
+    | ![image](/Images/stored-xss.png)|
     |:--:|
     | *(fig 2.)*|  
 
@@ -94,7 +98,7 @@
 
 - ## XSS Protection In React.js
 
-- ## References<a id="References"></a>
+- ## References<a id="XSSReferences"></a>
     https://owasp.org/www-community/attacks/xss/  
     
     https://portswigger.net/web-security/cross-site-scripting
@@ -107,5 +111,18 @@
     
     *(fig 1.)* https://miro.medium.com/max/1050/1\*o_asKsD_JqunhqggHoxodw.png  
     *(fig 2.)* https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/sorted-XSS.png  
-    *(fig 3.)* https://miro.medium.com/max/1050/1\*yuRkBR6YroYLCGpka9KdRA.png    
+    *(fig 3.)* https://miro.medium.com/max/1050/1\*yuRkBR6YroYLCGpka9KdRA.png  
+    #### DOT - Realise as an expert
+# Object Storage Systems <a id="OSS"></a>  
+ - ## Introduction to OSS
+    An Object Storage System is a computer data storage system that treats data as objects, unlike filesystems that treat data as a file hierarchy,  
+    or block storage that treats treats data as block within sectors and tracks.
+ - ## Why use a OSS
+ - ## CMS Architecture
+ - ## Different OSS'
+ - ## Connect to OSS using C#
+ - ## References<a id="OSSReferences">  
+    https://en.wikipedia.org/wiki/Object_storage  
+    https://aws.amazon.com/s3/  
+    https://aws.amazon.com/blogs/architecture/architecting-a-low-cost-web-content-publishing-system/  
 # Concurrency <a id="Concurrency"></a>   
